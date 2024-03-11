@@ -20,7 +20,7 @@ const menu = [
         title: "Waffles",
         category: "Breakfast",
         price: "$3.99",
-        img: "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        img: "https://images.pexels.com/photos/2228075/pexels-photo-2228075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         description:"Certain but she but shyness why cottage. Gay the put instrument sir entreaties affronting. Pretended exquisite see cordially the you. Weeks quiet do vexed or whose. Motionless if no to affronting imprudence no precaution."
     },
     {
@@ -47,4 +47,35 @@ const menu = [
         img: "https://images.unsplash.com/photo-1611270629569-8b357cb88da9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         description:"Feel sold off felt nay rose met you. We so entreaties cultivated astonished is. Was sister for few longer mrs sudden talent become. Done may bore quit evil old mile. If likely am of beauty tastes."
     }
-]
+];
+
+let section = document.querySelector(".menu");
+let itemContainer = document.querySelector(".item-container");
+
+document.addEventListener("DOMContentLoaded",function(){
+    showItems()
+
+})
+
+
+function showItems(){
+    let displayMenu = menu.map(function(item){
+        // console.log(item)
+        return `<article class="items">
+        <img src=${item.img}>
+        <div class="info">
+            <header>
+                <h4>${item.title}</h4>
+                <h4 class="price">${item.price}</h4>
+            </header>
+            <p class="text">${item.description}</p>
+ 
+                    </div>
+           
+         </article>`
+     });
+ 
+     displayMenu = displayMenu.join("")
+ 
+ itemContainer.innerHTML = displayMenu;
+}
